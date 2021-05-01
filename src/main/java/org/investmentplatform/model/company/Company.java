@@ -19,20 +19,23 @@ public class Company
     required = false, position = 0, hidden = true)
 	private Long companyId;
 	@ApiModelProperty(notes = "Name of the company.", 
-    required = false, position = 1)
+    required = true, position = 1)
 	private String companyName;
-	@ApiModelProperty(notes = "Address of the company", 
-    required = false, position = 2)
+	@ApiModelProperty(notes = "Address of the company.", 
+    required = true, position = 2)
 	private String address;
-	@ApiModelProperty(notes = "City where the company is based", 
-	required = false, position = 3)
+	@ApiModelProperty(notes = "City where the company is based.", 
+	required = true, position = 3)
 	private String city;
-	@ApiModelProperty(notes = "State where the company is based", 
-    required = false, position = 4)
+	@ApiModelProperty(notes = "State where the company is based.", 
+    required = true, position = 4)
 	private String state;
-	@ApiModelProperty(notes = "Administrative id of the company", 
+	@ApiModelProperty(notes = "Administrative id of the company.", 
     required = false, position = 5)
 	private String NIT;
+	@ApiModelProperty(notes = "Email contact of the company.", 
+    required = false, position = 5)
+	private String email;
 	
 	public Long getCompanyId() {
 		return companyId;
@@ -69,5 +72,11 @@ public class Company
 	}
 	public void setNIT(String nIT) {
 		NIT = nIT;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

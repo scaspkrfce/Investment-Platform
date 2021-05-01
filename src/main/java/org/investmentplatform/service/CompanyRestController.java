@@ -57,6 +57,8 @@ public class CompanyRestController
             	thisCompany.setState(company.getState());
             if(!company.getNIT().equals(""))
             	thisCompany.setNIT(company.getNIT());
+            if(!company.getEmail().equals(""))
+            	thisCompany.setEmail(company.getNIT());
             return this.companyRepository.save(thisCompany);
         })
         .orElseGet(()->
