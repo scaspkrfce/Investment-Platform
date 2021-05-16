@@ -23,13 +23,13 @@ public class User
 	private String firstName;
 	@ApiModelProperty(notes = "Surname of the user.", 
     required = true, position = 2)
-	private String Surname;
+	private String surname;
 	@ApiModelProperty(notes = "Email contact of the user.", 
     required = true, position = 3)
 	private String email;
 	@ApiModelProperty(notes = "Phone contact of the user.", 
     required = true, position = 4)
-	private String phoneNumber;
+	private Long phoneNumber;
 	@ApiModelProperty(notes = "Personal document of the user.", 
     required = true, position = 5)
 	private String document;
@@ -47,10 +47,10 @@ public class User
 		this.firstName = firstName;
 	}
 	public String getSurname() {
-		return Surname;
+		return surname;
 	}
 	public void setSurname(String surname) {
-		Surname = surname;
+		surname = surname;
 	}
 	public String getEmail() {
 		return email;
@@ -58,10 +58,10 @@ public class User
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhoneNumber() {
+	public Long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getDocument() {

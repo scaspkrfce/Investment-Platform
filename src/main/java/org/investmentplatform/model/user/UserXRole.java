@@ -1,18 +1,23 @@
 package org.investmentplatform.model.user;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import io.swagger.annotations.ApiModel;
+@ApiModel (description = "this class represents the relation between users and roles")
+@Entity
+
 public class UserXRole 
 {
 	@Id
     @Column(name="userXRole_Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userXRoleid;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
