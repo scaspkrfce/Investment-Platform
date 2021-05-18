@@ -50,7 +50,7 @@ public class User
 		return surname;
 	}
 	public void setSurname(String surname) {
-		surname = surname;
+		this.surname = surname;
 	}
 	public String getEmail() {
 		return email;
