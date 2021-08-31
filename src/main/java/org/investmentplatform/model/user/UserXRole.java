@@ -26,7 +26,11 @@ public class UserXRole
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
+    
+    @Column(name= "is_general_user")
+    private Boolean isGeneralUser;
 
     @Column(name = "response")
     private String response;
+    
 }

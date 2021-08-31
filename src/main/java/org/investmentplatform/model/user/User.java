@@ -16,7 +16,7 @@ public class User
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(notes = "Unique identifier of the user.", 
-    required = false, position = 0, hidden = true)
+    required = true, position = 0, hidden = true)
 	private Long userId;
 	@ApiModelProperty(notes = "First name of the user.", 
     required = true, position = 1)
