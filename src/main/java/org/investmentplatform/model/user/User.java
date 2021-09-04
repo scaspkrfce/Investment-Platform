@@ -34,8 +34,11 @@ public class User
     required = true, position = 5)
 	private String document;
 	@ApiModelProperty(notes = "Current status of the user.", 
-    required = true, position = 5)
+    required = true, position = 6)
 	private int status;
+	@ApiModelProperty(notes = "Hash code of the user's password.", 
+    required = true, position = 7)
+	private String passwordHash;
 	
 	public void setUserId(Long userId) {
 		this.userId = userId;
@@ -79,4 +82,11 @@ public class User
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	public String getPasswordHash() {
+		return passwordHash;
+	}
+	public void setPasswordHash(String passwordHash) {
+		this.passwordHash = passwordHash;
+	}
+	
 }

@@ -1,9 +1,11 @@
 package org.investmentplatform.service;
 
+import org.investmentplatform.exception.InvalidPasswordException;
+import org.investmentplatform.exception.UserNotFoundException;
 import org.investmentplatform.model.user.User;
 import org.investmentplatform.model.user.UserRepository;
 import org.investmentplatform.model.user.sesion.Sesion;
-import org.investmentplatform.security.TokenAuthentication;
+import org.investmentplatform.security.UserAuthenticator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +29,21 @@ public class AuthenticationRestController
 	}
 	
 	@PostMapping("/login") //to do authentication
-	public Sesion sesion(@RequestParam("email") String email, @RequestParam("password") String pwd) {
+	public Sesion sesion(@RequestParam("email") String email, @RequestParam("password") String password) {
 		
-		String token = TokenAuthentication.getJWTToken(email);
 		Sesion sesion = new Sesion();
-		User user = userRepository.findByEmail(email);
-		sesion.setUserName(user.getFirstName()+" "+user.getSurname());
-		sesion.setToken(token);		
-		sesion.setEmail(email);
+		String token = "";
+		try {
+			token = UserAuthenticator.validateUser(email, password);
+			User user = userRepository.findByEmail(email);
+			sesion.setUserName(user.getFirstName()+" "+user.getSurname());
+			sesion.setToken(token);		
+			sesion.setEmail(email);
+		} catch (UserNotFoundException e) {
+			e.printStackTrace();
+		} catch (InvalidPasswordException e) {
+			e.printStackTrace();
+		}
 		return sesion;
 	}
 
