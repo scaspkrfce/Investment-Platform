@@ -28,7 +28,7 @@ public class ProjectRestController
 		return projectRepository.findAll();
 	}
 	@GetMapping ("/project/{projectId}")
-	Project getproject(@PathVariable Long projectId)
+	Project getProject(@PathVariable Long projectId)
 	{
 		log.info("found project "+projectId);
 		return projectRepository.findById(projectId).get();

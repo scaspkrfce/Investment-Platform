@@ -34,7 +34,7 @@ public class Company
     required = false, position = 5)
 	private String NIT;
 	@ApiModelProperty(notes = "Email contact of the company.", 
-    required = false, position = 5)
+    required = false, position = 6)
 	private String email;
 	
 	public Long getCompanyId() {
