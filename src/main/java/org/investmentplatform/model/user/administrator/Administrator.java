@@ -38,6 +38,9 @@ public class Administrator
 	@ApiModelProperty(notes = "Date when the admin was hired.", 
     required = true, position = 6)
 	private Date hiringDate;
+	@ApiModelProperty(notes = "Personal document of the user.", 
+    required = true, position = 7)
+	private String document;
 	
 	public Long getAdminId() {
 		return adminId;
@@ -80,5 +83,11 @@ public class Administrator
 	}
 	public void setHiringDate(Date hiringDate) {
 		this.hiringDate = hiringDate;
+	}
+	public String getDocument() {
+		return document;
+	}
+	public void setDocument(String document) {
+		this.document = document;
 	}
 }

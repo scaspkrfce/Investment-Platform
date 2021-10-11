@@ -54,8 +54,6 @@ public class UserRestController
             	thisUser.setEmail(user.getEmail());
             if(!(user.getPhoneNumber() == 0))
             	thisUser.setPhoneNumber(user.getPhoneNumber());
-            if(!user.getDocument().equals(""))
-            	thisUser.setDocument(user.getDocument());
             if(!(user.getStatus() == 0))
             	thisUser.setStatus(user.getStatus());
             if(!user.getPasswordHash().equals(""))

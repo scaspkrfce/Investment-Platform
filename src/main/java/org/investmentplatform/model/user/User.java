@@ -30,14 +30,11 @@ public class User
 	@ApiModelProperty(notes = "Phone contact of the user.", 
     required = true, position = 4)
 	private Long phoneNumber;
-	@ApiModelProperty(notes = "Personal document of the user.", 
-    required = true, position = 5)
-	private String document;
 	@ApiModelProperty(notes = "Current status of the user.", 
-    required = true, position = 6)
+    required = true, position = 5)
 	private int status;
 	@ApiModelProperty(notes = "Hash code of the user's password.", 
-    required = true, position = 7)
+    required = true, position = 6)
 	private String passwordHash;
 	
 	public void setUserId(Long userId) {
@@ -67,12 +64,6 @@ public class User
 	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getDocument() {
-		return document;
-	}
-	public void setDocument(String document) {
-		this.document = document;
-	}
 	public Long getUserId() {
 		return userId;
 	}
@@ -88,5 +79,4 @@ public class User
 	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
 	}
-	
 }

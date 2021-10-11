@@ -1,3 +1,4 @@
+
 package org.investmentplatform.model.user;
 
 import javax.persistence.Entity;
@@ -18,6 +19,7 @@ public class Role
 	@ApiModelProperty(notes = "Name of the role", 
     required = true, position = 1)
 	private String roleName;
+	
 	public int getRoleId() {
 		return roleId;
 	}

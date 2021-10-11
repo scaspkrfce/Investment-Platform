@@ -27,6 +27,51 @@ public class Project {
 	@ApiModelProperty(notes = "Rating of the project.", 
     required = true, position = 3)
 	private Long projectRating;
+	@ApiModelProperty(notes = "Array of investors Ids.", 
+    required = false, position = 4)
+	private Long[] investorsIds;
+	@ApiModelProperty(notes = "Array of entrepreneurs Ids.", 
+    required = true, position = 5)
+	private Long[] entrepreneursIds;
+	@ApiModelProperty(notes = "About product: function, benefits, patents, competitors, clients, avant guard.", 
+    required = false, position = 6)
+	private String aboutProject;
+	@ApiModelProperty(notes = "About sales: target market, size, expected growth, market collectives, expansion plan.", 
+	required = true, position = 7)
+	private String aboutSales;
+	@ApiModelProperty(notes = "About management: founders, managers, associates, landmarks, roadmap, structure.", 
+	required = true, position = 8)
+	private String aboutManagement;
+	@ApiModelProperty(notes = "About management: Earning model, costs, loss period, possible buyers, spending.", 
+	required = true, position = 9)
+	private String aboutFinancing;
+	
+	
+
+	public String getAboutProject() {
+		return aboutProject;
+	}
+	public void setAboutProject(String aboutProject) {
+		this.aboutProject = aboutProject;
+	}
+	public String getAboutSales() {
+		return aboutSales;
+	}
+	public void setAboutSales(String aboutSales) {
+		this.aboutSales = aboutSales;
+	}
+	public String getAboutManagement() {
+		return aboutManagement;
+	}
+	public void setAboutManagement(String aboutManagement) {
+		this.aboutManagement = aboutManagement;
+	}
+	public String getAboutFinancing() {
+		return aboutFinancing;
+	}
+	public void setAboutFinancing(String aboutFinancing) {
+		this.aboutFinancing = aboutFinancing;
+	}
 	public Long getProjectId() {
 		return projectId;
 	}
@@ -50,6 +95,18 @@ public class Project {
 	}
 	public void setProjectRating(Long projectRating) {
 		this.projectRating = projectRating;
+	}
+	public Long[] getInvestorsIds() {
+		return investorsIds;
+	}
+	public void setInvestorsIds(Long[] investorsIds) {
+		this.investorsIds = investorsIds;
+	}
+	public Long[] getEntrepreneursIds() {
+		return entrepreneursIds;
+	}
+	public void setEntrepreneursIds(Long[] entrepreneursIds) {
+		this.entrepreneursIds = entrepreneursIds;
 	}
 	
 	

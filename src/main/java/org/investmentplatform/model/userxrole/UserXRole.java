@@ -1,4 +1,5 @@
-package org.investmentplatform.model.user;
+
+package org.investmentplatform.model.userxrole;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.investmentplatform.model.user.Role;
+import org.investmentplatform.model.user.User;
 
 import io.swagger.annotations.ApiModel;
 @ApiModel (description = "this class represents the relation between users and roles")
