@@ -13,7 +13,13 @@ public class HashGenerator
 	public static boolean check(String userPassword, String userHash) 
 	{
 		boolean isPassword = false;
-		isPassword = SCryptUtil.check(userPassword, userHash);
+		try 
+		{
+			isPassword = SCryptUtil.check(userPassword, userHash);
+			
+		} catch (Exception e) {
+
+		}
 		return isPassword;
 	}
 }

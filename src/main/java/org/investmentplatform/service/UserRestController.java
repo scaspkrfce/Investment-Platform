@@ -20,11 +20,27 @@ public class UserRestController
 	private static final Logger log = LoggerFactory.getLogger(ProjectRestController.class );
 	@Autowired
 	UserRepository userRepository;
+	private AuthenticationRestController authenticationRestController;
 	@GetMapping ("/users")
 	List<User> users() 
 	{
 		log.info("found users");
 		return userRepository.findAll();
+	}
+	@GetMapping ("/users/admins")
+	List<User> admins() 
+	{
+		log.info("found admins");
+		List<User> userList = userRepository.findAll();
+		authenticationRestController = null;
+		for(User index: userList)
+		{
+			if(!authenticationRestController.isAdmin(index))
+			{
+				userList.remove(index);
+			}
+		}
+		return userList;
 	}
 	@GetMapping ("/user/{userId}")
 	User getUser(@PathVariable Long userId)
@@ -54,8 +70,6 @@ public class UserRestController
             	thisUser.setEmail(user.getEmail());
             if(!(user.getPhoneNumber() == 0))
             	thisUser.setPhoneNumber(user.getPhoneNumber());
-            if(!(user.getStatus() == 0))
-            	thisUser.setStatus(user.getStatus());
             if(!user.getPasswordHash().equals(""))
             	thisUser.setPasswordHash(user.getPasswordHash());
 

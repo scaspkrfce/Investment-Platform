@@ -21,7 +21,7 @@ class HashGeneratorTest {
 	{
 		String userPassword = "password";
 		String hashPassword = HashGenerator.GenerateHashFromPassword(userPassword);
-		
+		System.out.println(hashPassword);
         boolean matched = SCryptUtil.check("password", hashPassword);
         assertTrue(matched);
          

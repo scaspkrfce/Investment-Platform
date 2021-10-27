@@ -30,11 +30,29 @@ public class UserXRole
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
-    
-    @Column(name= "is_general_user")
-    private Boolean isGeneralUser;
 
-    @Column(name = "response")
-    private String response;
+	public Long getUserXRoleid() {
+		return userXRoleid;
+	}
+
+	public void setUserXRoleid(Long userXRoleid) {
+		this.userXRoleid = userXRoleid;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
     
 }

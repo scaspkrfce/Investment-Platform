@@ -5,7 +5,7 @@ public class Sesion
 	private String userName;
 	private String token;
 	private String email;
-	private boolean isGeneralUser;
+	private boolean isAdmin;
 	
 	public String getUserName() {
 		return userName;
@@ -25,10 +25,11 @@ public class Sesion
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public boolean isGeneralUser() {
-		return isGeneralUser;
+	public boolean isAdmin() {
+		return isAdmin;
 	}
-	public void setGeneralUser(boolean isGeneralUser) {
-		this.isGeneralUser = isGeneralUser;
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
+
 }
