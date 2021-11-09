@@ -35,7 +35,7 @@ public class AuthenticationRestController
 			sesion.setUserName(user.getFirstName()+" "+user.getSurname());
 			sesion.setToken(token);		
 			sesion.setEmail(email);
-			sesion.setAdmin(isAdmin(user));
+			sesion.setAdmin(isAdmin(user, this.userXRoleRepository));
 		} catch (UserNotFoundException e) {
 			e.printStackTrace();
 		} catch (InvalidPasswordException e) {
@@ -43,7 +43,7 @@ public class AuthenticationRestController
 		}
 		return sesion;
 	}
-	public boolean isAdmin(User user) {
+	public boolean isAdmin(User user,UserXRoleRepository userXRoleRepository) {
 		Collection<UserXRole> userXRoleList = userXRoleRepository.findByUser(user);
 		for(UserXRole index: userXRoleList)
 		{

@@ -84,11 +84,14 @@ INSERT INTO role (role_id, role_name) VALUES (10, 'Administrator'), (20, 'Entrep
 INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
 VALUES (1000,'Santiago', 'Castro', 'scaspkrfce@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133333, true);
 
-INSERT INTO user (user_id, first_name, surname, email, phone_number, enabled)
-VALUES (1001,'John', 'Doe', 'nn@outlook.com', 3133334, true);
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1001,'John', 'Doe', 'nn@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133334, true);
 
 INSERT INTO userXRole (userxrole_id, user_id, role_id)
 VALUES (1, 1000, 10);
 
 INSERT INTO userXRole (userxrole_id, user_id, role_id)
 VALUES (2, 1001, 20);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1000, 'Director General', 'Consejo Directivo', 'Termino Indefinido', 5000000, '', '2021-09-04', 1000706054);

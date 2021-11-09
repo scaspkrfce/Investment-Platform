@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.investmentplatform.model.user.User;
 import org.investmentplatform.model.user.UserRepository;
+import org.investmentplatform.model.userxrole.UserXRoleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,30 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserRestController 
 {
+	
 	private static final Logger log = LoggerFactory.getLogger(ProjectRestController.class );
 	@Autowired
 	UserRepository userRepository;
-	private AuthenticationRestController authenticationRestController;
+	@Autowired
+	UserXRoleRepository userXRoleRepository;
 	@GetMapping ("/users")
 	List<User> users() 
 	{
 		log.info("found users");
 		return userRepository.findAll();
-	}
-	@GetMapping ("/users/admins")
-	List<User> admins() 
-	{
-		log.info("found admins");
-		List<User> userList = userRepository.findAll();
-		authenticationRestController = null;
-		for(User index: userList)
-		{
-			if(!authenticationRestController.isAdmin(index))
-			{
-				userList.remove(index);
-			}
-		}
-		return userList;
 	}
 	@GetMapping ("/user/{userId}")
 	User getUser(@PathVariable Long userId)

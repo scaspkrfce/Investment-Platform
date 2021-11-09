@@ -1,6 +1,6 @@
 package org.investmentplatform.model.user.administrator;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
