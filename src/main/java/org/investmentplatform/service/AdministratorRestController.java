@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -43,11 +44,28 @@ public class AdministratorRestController
 			adminInfo.setJobTitle(index.getJobTitle());
 			adminInfo.setDepartment(index.getDepartment());
 			adminInfo.setContractType(index.getContractType());
-			adminInfo.setSalary("$"+index.getSalary().toString());
 			adminInfo.setHiringDate(index.getHiringDate());
 			adminInfo.setDocument(index.getDocument());
 			adminInfoList.add(adminInfo);
 		}
+		System.out.print(adminInfoList);
 		return adminInfoList;
+	}
+	@GetMapping ("/admins/info/{id}")
+	AdminInfo adminInfo(@PathVariable Long id) 
+	{
+		log.info("found admin info");
+		AdminInfo adminInfo = new AdminInfo();
+		adminInfo.setAdminId(id);
+		User user = userRepository.findById(id).get();
+		Administrator admin = adminRepository.findById(id).get();
+		adminInfo.setFirstName(user.getFirstName());
+		adminInfo.setSurname(user.getSurname());
+		adminInfo.setJobTitle(admin.getJobTitle());
+		adminInfo.setDepartment(admin.getDepartment());
+		adminInfo.setContractType(admin.getContractType());
+		adminInfo.setHiringDate(admin.getHiringDate());
+		adminInfo.setDocument(admin.getDocument());
+		return adminInfo;
 	}
 }

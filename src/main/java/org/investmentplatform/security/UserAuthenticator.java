@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserAuthenticator 
-{
+{	
 	@Autowired
 	UserRepository userRepository;
 	public String validateUser (String email, String password) throws UserNotFoundException, InvalidPasswordException
@@ -34,4 +34,5 @@ public class UserAuthenticator
 		}
 		return token;
 	}
+	
 }

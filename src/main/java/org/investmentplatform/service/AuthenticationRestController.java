@@ -32,6 +32,7 @@ public class AuthenticationRestController
 		try {
 			token = userAuthenticator.validateUser(email, password);
 			User user = userRepository.findByEmail(email).get();
+			sesion.setId(user.getUserId());
 			sesion.setUserName(user.getFirstName()+" "+user.getSurname());
 			sesion.setToken(token);		
 			sesion.setEmail(email);

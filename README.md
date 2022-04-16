@@ -20,3 +20,6 @@ npm test
 
 # Swagger
 localhost:8080/swagger-ui.html
+
+# OpenLDAP server
+Port: 389 SSL Port: 636 Server Name: FusaNestServer

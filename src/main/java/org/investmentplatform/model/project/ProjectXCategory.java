@@ -16,9 +16,9 @@ import io.swagger.annotations.ApiModel;
 public class ProjectXCategory 
 {
 	@Id
-    @Column(name="ProjectXRole_Id")
+    @Column(name="project_x_category_Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long projectXRoleId;
+    private Long projectXCategoryId;
 
     @ManyToOne
     @JoinColumn(name = "project_id")
@@ -28,12 +28,12 @@ public class ProjectXCategory
     @JoinColumn(name = "category_id")
     private Category categoryId;
 
-	public Long getProjectXRoleId() {
-		return projectXRoleId;
+	public Long getProjectXCategoryId() {
+		return projectXCategoryId;
 	}
 
-	public void setProjectXRoleId(Long projectXRoleId) {
-		this.projectXRoleId = projectXRoleId;
+	public void setProjectXCategoryId(Long projectXCategoryId) {
+		this.projectXCategoryId = projectXCategoryId;
 	}
 
 	public Project getProjectId() {

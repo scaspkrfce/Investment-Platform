@@ -16,7 +16,6 @@ public class AdminInfo {
 	private String jobTitle;
 	private String department;
 	private String contractType;
-	private String salary;
 	private Date hiringDate;
 	private String document;
 	public String getFirstName() {
@@ -54,12 +53,6 @@ public class AdminInfo {
 	}
 	public void setContractType(String contractType) {
 		this.contractType = contractType;
-	}
-	public String getSalary() {
-		return salary;
-	}
-	public void setSalary(String salary) {
-		this.salary = salary;
 	}
 	public Date getHiringDate() {
 		return hiringDate;

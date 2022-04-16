@@ -15,7 +15,7 @@ public class Category {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(notes = "Unique identifier of the category.", 
-    required = false, position = 0, hidden = true)
+    required = true, position = 0, hidden = true)
 	private Long categoryId;
 	@ApiModelProperty(notes = "Name of the category.", 
     required = true, position = 1)

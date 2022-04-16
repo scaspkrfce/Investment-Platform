@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiModel;
 public class UserXRole 
 {
 	@Id
-    @Column(name="userXRole_Id")
+    @Column(name="user_x_role_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userXRoleid;
 

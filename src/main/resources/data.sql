@@ -46,34 +46,34 @@ INSERT INTO category (category_id, category_name) VALUES (5, 'Paginas Web');
 INSERT INTO category (category_id, category_name) VALUES (6, 'Videojuegos');
 
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (1, 1, 2);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (2, 1, 6);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (3, 2, 1);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (4, 2, 2);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (5, 3, 3);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (6, 3, 5);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (7, 4, 2);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (8, 4, 4);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (9, 5, 4);
 
-INSERT INTO projectxcategory (projectXRole_id, project_id, category_id)
+INSERT INTO projectxcategory (project_x_category_id, project_id, category_id)
 VALUES (10, 5, 5);
 
 
@@ -82,16 +82,128 @@ INSERT INTO role (role_id, role_name) VALUES (10, 'Administrator'), (20, 'Entrep
 
 
 INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
-VALUES (1000,'Santiago', 'Castro', 'scaspkrfce@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133333, true);
+VALUES (100,'Santiago', 'Castro', 'scaspkrfce@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133333, true);
 
-INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
-VALUES (1001,'John', 'Doe', 'nn@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133334, true);
-
-INSERT INTO userXRole (userxrole_id, user_id, role_id)
-VALUES (1, 1000, 10);
-
-INSERT INTO userXRole (userxrole_id, user_id, role_id)
-VALUES (2, 1001, 20);
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (1, 100, 10);
 
 INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
-VALUES (1000, 'Director General', 'Consejo Directivo', 'Termino Indefinido', 5000000, '', '2021-09-04', 1000706054);
+VALUES (100, 'Director General', 'Consejo Directivo', 'Termino Indefinido', 10000000, '', '2021-09-04', 1000706054);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (2001,'John', 'Doe', 'nn@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133334, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (2, 2001, 20);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1000,'Valentina', 'Medina', 'vmd@gmail.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133336, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (3, 1000, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1000, 'Director de Tecnología', 'Consejo Directivo', 'Termino Indefinido', 7000000, '', '2021-09-07', 100023024);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1001,'Felipe', 'Mendez', 'Fmendez@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3133335, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (4, 1001, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1001, 'Jefe de Front-End', 'T.I.', 'Termino Indefinido', 5500000, '', '2021-09-06', 1000706024);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1002,'Lorena', 'Rojas', 'redlor@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 315123242, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (5, 1002, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1002, 'Analista de Requisitos', 'T.I.', 'Termino Indefinido', 2500000, '', '2021-09-14', 12314344);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1003,'Juan', 'Rincon', 'rincon@gmail.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 3154328, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (6, 1003, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1003, 'Programador Front-End', 'T.I.', 'Termino Idenfinido', 2400000, '', '2021-09-09', 100439054);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1004,'Sofia', 'Polanco', 'polo@gmail.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 31524432, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (7, 1004, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1004, 'Jefe de Back-End', 'T.I.', 'Termino Fijo', 5500000, '', '2021-09-10', 1204373054);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1005,'Alanna', 'Trujillo', 'trujillo@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 315242132, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (8, 1005, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1005, 'Programador Back-End', 'T.I.', 'Termino Fijo', 2400000, '', '2021-09-11', 123233054);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1006,'Mario', 'Ruiz', 'maru@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 31523542, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (9, 1006, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1006, 'Jefe de Arquitectura T.I.', 'T.I.', 'Termino Indefinido', 5500000, '', '2021-09-12', 123233434);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1007,'Sebastian', 'Guerrero', 'guerrerin@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 315123542, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (10, 1007, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1007, 'Arquitecto TI', 'T.I.', 'Termino Aprendizaje', 2400000, '', '2021-09-03', 12352434);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1100,'Valentina', 'Vargas', 'vvargas@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 318343542, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (11, 1100, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1100, 'Director de Recursos Humanos', 'Consejo Directivo', 'Termino Indefinido', 7000000, '', '2021-09-13', 10323434);
+
+
+
+INSERT INTO user (user_id, first_name, surname, email, password_hash, phone_number, enabled)
+VALUES (1200,'Julian', 'Espitia', 'jespitia@outlook.com', '$s0$41010$ct9jbGk03J2pK9NEG+ZA2w==$Xm3YZxGEREFo//3fkT4oNA7Bs4WzqvA9pDPpqlhz5HM=', 318343542, true);
+
+INSERT INTO userXRole (user_x_role_id, user_id, role_id)
+VALUES (12, 1200, 10);
+
+INSERT INTO administrator (admin_id, job_title, department, contract_type, salary, educational_background, hiring_date, document)
+VALUES (1200, 'Director de Marketing', 'Consejo Directivo', 'Termino Indefinido', 7000000, '', '2021-09-10', 10323434);

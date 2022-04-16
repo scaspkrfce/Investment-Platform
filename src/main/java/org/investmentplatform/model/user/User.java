@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,6 +17,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel (description = "this class represents users")
 @Entity
+@Table (name = "user" , schema = "public")
 
 public class User implements UserDetails, Serializable
 {
