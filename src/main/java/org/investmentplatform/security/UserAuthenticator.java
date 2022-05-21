@@ -19,6 +19,7 @@ public class UserAuthenticator
 		if(user == null)
 		{
 			throw new UserNotFoundException(email);
+			
 		}
 		else
 		{

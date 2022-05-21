@@ -19,10 +19,10 @@ class HashGeneratorTest {
 	@Test
 	void testGenerateHash() 
 	{
-		String userPassword = "password";
+		String userPassword = "Password123+";
 		String hashPassword = HashGenerator.GenerateHashFromPassword(userPassword);
 		System.out.println(hashPassword);
-        boolean matched = SCryptUtil.check("password", hashPassword);
+        boolean matched = SCryptUtil.check("Password123+", hashPassword);
         assertTrue(matched);
          
         matched = SCryptUtil.check("passwordno", hashPassword);
