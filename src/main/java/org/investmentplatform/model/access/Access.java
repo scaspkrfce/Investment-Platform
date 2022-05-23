@@ -25,9 +25,9 @@ public class Access {
 	@ApiModelProperty(notes = "Unique volatile key for access.", 
     required = true, position = 2, hidden = true)
 	private String otp;
-	@ApiModelProperty(notes = "Number of invalid atempts.", 
+	@ApiModelProperty(notes = "Number of invalid attempts.", 
     required = true, position = 3, hidden = true)
-	private int invalidAtempts;
+	private int invalidAttempts;
 	public Long getAccessId() {
 		return accessId;
 	}
@@ -46,10 +46,10 @@ public class Access {
 	public void setOtp(String otp) {
 		this.otp = otp;
 	}
-	public int getInvalidAtempts() {
-		return invalidAtempts;
+	public int getInvalidAttempts() {
+		return invalidAttempts;
 	}
-	public void setInvalidAtempts(int invalidAtempts) {
-		this.invalidAtempts = invalidAtempts;
+	public void setInvalidAttempts(int invalidAtempts) {
+		this.invalidAttempts = invalidAtempts;
 	}
 }

@@ -18,7 +18,7 @@ public class HashGenerator
 			isPassword = SCryptUtil.check(userPassword, userHash);
 			
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
 		return isPassword;
 	}

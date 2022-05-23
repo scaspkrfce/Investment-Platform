@@ -28,7 +28,9 @@ public class AuthenticationRestController
 	UserAuthenticator userAuthenticator;
 	@Autowired
 	AccessRepository accessRepository;
-	private final int MAX_ATEMPTS = 4;
+	@Autowired
+	private SendEmail sendEmail;
+	private final int MAX_ATEMPTS = 9;
 	private final int ADMIN_ROLE_ID = 10;
 	@GetMapping("/login") Sesion sesion(@RequestParam("email") String email, @RequestParam("password") String password) {
 		Sesion sesion = new Sesion();
@@ -41,27 +43,32 @@ public class AuthenticationRestController
 			sesion.setToken(token);		
 			sesion.setEmail(email);
 			sesion.setAdmin(isAdmin(user, this.userXRoleRepository));
+			Long id = user.getUserId();
+			Access access = accessRepository.findByUserId(id).get();
+			access.setOtp(null);
+			access = accessRepository.save(access);
 		} catch (UserNotFoundException e) {
 			e.printStackTrace();
 		} catch (InvalidPasswordException e) {
 			System.out.println("Invalid password entered with email: "+email);
-			addAtempt(email);
+			addAttempt(email);
 		}
 		return sesion;
 	}
-	private void addAtempt(String email) {
+	private void addAttempt(String email) {
 		User user = userRepository.findByEmail(email).get();
 		Long id = user.getUserId();
 		Access access = accessRepository.findByUserId(id).get();
-		if(access.getInvalidAtempts()==MAX_ATEMPTS)
+		if(access.getInvalidAttempts()==MAX_ATEMPTS)
 		{
-			access.setInvalidAtempts(0);
-			System.out.println("5 Invalid password atempts with email: "+email);
+			access.setInvalidAttempts(0);
+			System.out.println((MAX_ATEMPTS+1)+" Invalid password atempts with email: "+email);
+			sendEmail.sendEmail(email, "Información de Seguridad", "Se han realizado más de "+(MAX_ATEMPTS+1)+" intentos para acceder a tu cuenta de FusaNest.");
 		}
 		else
 		{
-			int invalidAtempts = access.getInvalidAtempts()+1;
-			access.setInvalidAtempts(invalidAtempts);
+			int invalidAttempts = access.getInvalidAttempts()+1;
+			access.setInvalidAttempts(invalidAttempts);
 		}
 		access = accessRepository.save(access);
 	}
