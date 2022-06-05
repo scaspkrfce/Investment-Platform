@@ -1,6 +1,7 @@
 package org.investmentplatform.service;
 
 import java.util.Collection;
+import java.util.NoSuchElementException;
 
 import org.investmentplatform.exception.InvalidPasswordException;
 import org.investmentplatform.exception.UserNotFoundException;
@@ -47,8 +48,8 @@ public class AuthenticationRestController
 			Access access = accessRepository.findByUserId(id).get();
 			access.setOtp(null);
 			access = accessRepository.save(access);
-		} catch (UserNotFoundException e) {
-			e.printStackTrace();
+		} catch (NoSuchElementException e) {
+			System.out.println("User with email: "+email+" does not exist");
 		} catch (InvalidPasswordException e) {
 			System.out.println("Invalid password entered with email: "+email);
 			addAttempt(email);
